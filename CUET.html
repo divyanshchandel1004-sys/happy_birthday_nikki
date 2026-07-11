@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guess what day it is...</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body{
+    background: linear-gradient(180deg, rgba(255,246,240,0.65), rgba(255,246,240,0.85)), url("photo/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .stage{ min-height: 100vh; }
+  .cat-frame{
+    width: min(260px, 60vw);
+    margin: 6px auto 28px;
+    display: block;
+  }
+  h1.headline{ font-size: 38px; color: var(--plum); }
+  h1.headline u{ text-decoration-color: var(--pink); text-decoration-thickness: 4px; }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="card">
+    <span class="eyebrow">A very important question</span>
+    <h1 class="headline"><u>You really thought I forgot your birthday, didn't you?</u></h1>
+
+    <img class="sticker cat-frame" src="photo/cat.webp" alt="suspicious cat">
+
+    <div class="btn-row">
+      <button id="yesBtn" class="btn-yes" onclick="window.location='bday.html'">
+        Yes, I did 😳
+      </button>
+      <button id="noBtn" class="btn-no" data-caught-text="Okay fine, click me 😩" onclick="window.location='yes.html'">
+        No, I was sure u remember
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  spawnFloaters(['🐾','💗','✨','🐱'], 12);
+  setupDodge('noBtn', 5);
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIAR!!!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body{
+    background: linear-gradient(180deg, rgba(255, 91, 110, 0.18), rgba(255,246,240,0.9)), url("photo/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .lie{
+    font-family: 'Fredoka', sans-serif;
+    font-size: clamp(42px, 9vw, 80px);
+    color: var(--red-dark);
+    text-shadow: 3px 3px 0 #ffd166;
+    margin: 0 0 10px;
+    animation: shake 0.6s ease-in-out infinite;
+  }
+  @keyframes shake{
+    0%, 100% { transform: rotate(-2deg); }
+    50%      { transform: rotate(2deg); }
+  }
+  .angry-cat{
+    width: min(240px, 55vw);
+    margin: 10px auto 24px;
+    display: block;
+    border-color: var(--red);
+  }
+  .again{
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--plum);
+    max-width: 520px;
+    margin: 0 auto 26px;
+  }
+  .btn-row{ flex-direction: column; align-items: center; width: 100%; }
+  button.btn-yes, button.btn-no{ width: 100%; max-width: 420px; }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="card">
+    <p class="lie">LIAR!!!!!!!!!</p>
+
+    <img class="sticker angry-cat" src="photo/angry_cat.webp" alt="angry cat">
+
+    <p class="again">I will ask you again, did you really think that I forgot your birthday or not?</p>
+
+    <div class="btn-row">
+      <button id="yesBtn" class="btn-yes" onclick="window.location='bday.html'">
+        Okay fine, yes I thought u forgot... ooo great friend of mine, please forgive me 🙏
+      </button>
+      <button id="noBtn" class="btn-no" data-caught-text="Fine, click here then 😤" onclick="window.location='https://www.youtube.com/shorts/kCXwuy0DQdc'">
+        Nahhh, I was 100% sure that you remember
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  spawnFloaters(['😾','💢','🐾','⚡'], 12);
+  setupDodge('noBtn', 5);
+</script>
+</body>
+</html>
